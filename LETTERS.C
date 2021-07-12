@@ -1,7 +1,7 @@
 #include <graphics.h>
 #include <conio.h>
 
-// (ABC) DEFG (HI) JKLMNOPQ (R) STU (VWXYZ)
+// A-Z functions
 void drawA (int x, int y, int w, int h) {
 	line(x, y + h, x + (w / 2), y);
 	line(x + (w / 2), y, x + w, y + h);
@@ -141,13 +141,12 @@ void drawZ (int x, int y, int w, int h) {
 	line(x, y + h, x + w, y + h);
 }
 
+// Heart function
 void drawHeart (int x, int y, int w, int h) {
-	// ^^
 	line(x, y + (h / 4), x + (w / 4), y);
 	line(x + (w / 4), y, x + (w / 2), y + (h / 4));
 	line(x + (w / 2), y + (h / 4), x + (w - (w / 4)), y);
 	line(x + (w - (w / 4)), y, x + w, y + (h / 4));
-	// \/
 	line(x, y + (h / 4), x + (w / 2), y + h);
 	line(x + (w / 2), y + h, x + w, y + (h / 4));
 }
