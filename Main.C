@@ -1,11 +1,10 @@
 #include <graphics.h>
 #include <conio.h>
 
-// A-Z functions
 void drawA (int x, int y, int w, int h) {
 	line(x, y + h, x + (w / 2), y);
 	line(x + (w / 2), y, x + w, y + h);
-	line(x, y + (h / 2), x + w, y + (h / 2));
+	line(x + (w / 4), y + (h / 2), x + (w - (w / 4)), y + (h / 2));
 }
 void drawB (int x, int y, int w, int h) {
 	line(x, y, x, y + h);
@@ -141,22 +140,47 @@ void drawZ (int x, int y, int w, int h) {
 	line(x, y + h, x + w, y + h);
 }
 
-// Heart function
 void drawHeart (int x, int y, int w, int h) {
+	// ^^
 	line(x, y + (h / 4), x + (w / 4), y);
 	line(x + (w / 4), y, x + (w / 2), y + (h / 4));
 	line(x + (w / 2), y + (h / 4), x + (w - (w / 4)), y);
 	line(x + (w - (w / 4)), y, x + w, y + (h / 4));
+	// \/
 	line(x, y + (h / 4), x + (w / 2), y + h);
 	line(x + (w / 2), y + h, x + w, y + (h / 4));
 }
 
+void drawStar (int x, int y, int w, int h) {
+	float x25 = x + (w / 4), x33 = x + (w / 3), x50 = x + (w / 2), x66 = x + (w - (w / 3)), x75 = x + (w - (w / 4));
+	float y33 = y + (h / 3), y50 = y + (h / 2), y66 = y + (h - (h / 3));
+
+	// ^
+	line(x50, y, x33, y33);
+	line(x50, y, x66, y33);
+
+	// <
+	line(x, y50, x33, y33);
+	line(x, y50, x33, y66);
+
+	// >
+	line(x66, y33, x + w, y50);
+	line(x66, y66, x + w, y50);
+
+	// \/
+	line(x25, y + h, x33, y66);
+	line(x25, y + h, x50, y66);
+
+	// \/
+	line(x50, y66, x75, y + h);
+	line(x66, y66, x75, y + h);
+}
+
 void main () {
-	int driver = DETECT, mode;
+	int GDriver = DETECT, GMode;
 
-	clrscr();
-
-	initgraph(&driver, &mode, "C://TURBOC3//BGI");
+	initgraph(&GDriver, &GMode, "C://TURBOC3//BGI");
+	cleardevice();
 
 	// VAIBHAV
 	drawV(150, 25, 10, 20);
@@ -177,7 +201,9 @@ void main () {
 	drawA(300, 50, 10, 20);
 
 	// Heart
-	drawHeart(350, 25, 40, 45);
+	drawHeart(350, 25, 45, 45);
+	// Star
+	drawStar(410, 25, 45, 45);
 
 
 	// A-Z
