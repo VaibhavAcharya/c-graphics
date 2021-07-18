@@ -1,10 +1,12 @@
 # c-graphics
 Graphics implemented in C using `graphics.h`.
 
-- ### Letters
+- ## Letters
   Contains functions for A-Z letters, ♥ & ⭐.
-  ![Letters Preview](./screenshot_new.png)
 
-- ### Man on Mars
+  ![Letters](./previews/Letters.png)
+
+- ## Man on Mars
   A scene of man on Mars.
-  ![Man on Mars Preview](./ManOnMars.gif)
+
+  ![Man on Mars](./previews/ManOnMars.gif)
