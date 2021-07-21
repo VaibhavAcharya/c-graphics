@@ -10,3 +10,8 @@ Graphics implemented in C using `graphics.h`.
   A scene of man on Mars.
 
   ![Man on Mars](./previews/ManOnMars.gif)
+
+- ## Temple
+  A scene of Ram mandir.
+
+  ![Temple](./previews/Temple.gif)
